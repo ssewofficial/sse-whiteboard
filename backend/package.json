@@ -1,0 +1,39 @@
+{
+  "name": "sse-whiteboard-backend",
+  "version": "1.0.0",
+  "description": "Backend For SSE ",
+  "homepage": "https://github.com/ssewofficial/sse-whiteboard#readme",
+  "bugs": {
+    "url": "https://github.com/ssewofficial/sse-whiteboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssewofficial/sse-whiteboard.git"
+  },
+  "license": "MIT",
+  "author": "SSE World",
+  "type": "module",
+  "main": "./src/server.ts",
+  "scripts": {
+    "dev": "tsx watch ./src/server.ts"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/ws": "^8.18.1",
+    "concurrently": "^9.2.0",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/websocket": "^11.2.0",
+    "@tldraw/sync-core": "^3.15.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "fastify": "^5.5.0",
+    "mongoose": "^8.17.1",
+    "unfurl.js": "^6.4.0",
+    "ws": "^8.18.3"
+  }
+}
