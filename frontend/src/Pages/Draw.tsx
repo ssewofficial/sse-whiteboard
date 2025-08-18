@@ -23,6 +23,8 @@ export default function Draw() {
     assets: multiplayerAssets,
   });
 
+  document.title === "Draw | SSE Whiteboard" 
+
   return (
     <div style={{ position: "fixed", inset: 0 }}>
       <Tldraw
