@@ -1,10 +1,13 @@
 import cors from "@fastify/cors";
 import websocketPlugin from "@fastify/websocket";
+import fastifyExpress from "@fastify/express";
 import fastify from "fastify";
 import type { RawData } from "ws";
 import { loadAsset, storeAsset } from "./assets";
 import { makeOrLoadRoom } from "./rooms";
 import { unfurl } from "./unfurl";
+import expressApp from "./express";
+import { MONGO_URI } from "./lib/env";
 
 const PORT = 5858;
 
@@ -13,6 +16,7 @@ const PORT = 5858;
 const app = fastify();
 app.register(websocketPlugin);
 app.register(cors, { origin: "*" });
+app.register(fastifyExpress);
 
 app.register(async (app) => {
   // This is the main entrypoint for the multiplayer sync
@@ -68,6 +72,10 @@ app.register(async (app) => {
     res.send(await unfurl(url));
   });
 });
+
+app.after(() => {
+  app.use("/api/v1", expressApp)
+})
 
 app.listen({ port: PORT }, (err) => {
   if (err) {
