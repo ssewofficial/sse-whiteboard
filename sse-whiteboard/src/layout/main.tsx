@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Profile from "../components/Profile";
+import MobileNav from "../components/MobileNav";
 
 export default function MainLayout({ children }: React.PropsWithChildren) {
   return (
@@ -21,7 +22,7 @@ export default function MainLayout({ children }: React.PropsWithChildren) {
       </div>
       <div className="flex flex-col">
         <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
-          {/* <MobileNav /> */}
+          <MobileNav />
           <div className="w-full flex-1"></div>
           <Profile />
         </header>
